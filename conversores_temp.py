@@ -1,5 +1,6 @@
 def converter_temperatura(valor:float, de_escala:str, para_escala:str) -> float:
 
+# FALTOU FAZER SE AS ESCALAS FOREM IGUAIS
     de_escala = de_escala.upper()
     para_escala = para_escala.upper()
     
