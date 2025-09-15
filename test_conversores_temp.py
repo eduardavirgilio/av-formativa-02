@@ -29,3 +29,34 @@ def test_kelvin_de_escala_negativo():
     # Executando a função e esperando erro
     with pytest.raises(ValueError, match="Temperatura em KELVIN não pode ser negativa"):
         converter_temperatura(valor, de_escala, para_escala) 
+
+def test_escala_invalida_dois_valores():
+    # Definindo a entrada
+    valor = 200
+    de_escala = "KELVEN"
+    para_escala = "SUCELSIUS"
+
+    # Executando a função e esperando erro
+    with pytest.raises(ValueError, match="Escala de temperatura inválida"):
+        converter_temperatura(valor, de_escala, para_escala)
+
+def test_escala_invalida_um_valor():
+    # Definindo a entrada
+    valor = 200
+    de_escala = "KELVIN"
+    para_escala = "SUCELSIUS"
+
+    # Executando a função e esperando erro
+    with pytest.raises(ValueError, match="Escala de temperatura inválida"):
+        converter_temperatura(valor, de_escala, para_escala)  
+
+def test_escala_invalida_um_valor_2():
+    # Definindo a entrada
+    valor = 200
+    de_escala = "KELVEN"
+    para_escala = "CELSIUS"
+
+    # Executando a função e esperando erro
+    with pytest.raises(ValueError, match="Escala de temperatura inválida"):
+        converter_temperatura(valor, de_escala, para_escala)  
+
